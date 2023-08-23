@@ -8,6 +8,6 @@
 👇To check the features, choose one of the below buttons:
 
   ANSWER
-  keyboard: 💵Payment Gateway (USD price),\n 💳Payment Gateway (Crypto price),\n 🔗PaymentLink, 💸Withdraw,\n 🔎Transaction Status, Accepted Coins
+  keyboard: 💵Payment Gateway (USD price),\n 💳White-label payment (Crypto price),\n 💳Static wallet for USDT(TRC20),\n 💸Withdraw,\n 🔎Transaction Status
   aliases: 
 CMD*/

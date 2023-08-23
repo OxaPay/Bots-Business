@@ -8,10 +8,10 @@
   aliases: 
 CMD*/
 
-// Get your Merchant keys in https://account.oxapay.com/merchants
+// Get your Merchant keys in https://app.oxapay.com/merchants
 Libs.OxaPayLib.setMerchantKey("YOUR_MERCHANT_KEY");
 
-// Get your payment api keys in https://account.oxapay.com/paymentapi 
-Libs.OxaPayLib.setPaymentApiKey("YOUR_PAYMENT_API_KEY");
+// Get your payout api keys in https://app.oxapay.com/payout
+Libs.OxaPayLib.setPayoutApiKey("YOUR_PAYOUT_API_KEY");
 
-//Please set this command for admin access only
+Bot.sendMessage("Setup was completed successfully")

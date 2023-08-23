@@ -8,4 +8,4 @@
   aliases: 💵Payment Gateway (USD price)
 CMD*/
 
-Libs.OxaPayLib.createTransaction({ fields: { amount: 15 }, onCreatePayment: "/onCreatePaymentWithUSD" })
+Libs.OxaPayLib.apiCall({url:"merchants/request", fields: { amount: 15, onCallback: "/onCallbackPayment", orderId: "ORD-123"}, onSuccess: "/onCreatePaymentWithUSD" })

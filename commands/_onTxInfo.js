@@ -6,6 +6,13 @@
   keyboard: 
 CMD*/
 
-if(!options) return
+if (!options) return
 
-Bot.inspect(options)
+Bot.sendMessage(
+  `🟢Result: ${options.result}
+📋Message: ${options.message}
+🆔TrackID: ${options.trackId}
+📆Expired at: ${options.expiredAt}
+🗃️Status: ${options.status}`,
+  { parse_mode: "HTML" }
+);

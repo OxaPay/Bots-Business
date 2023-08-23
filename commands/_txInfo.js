@@ -8,4 +8,4 @@
   aliases: 🔎Transaction Status
 CMD*/
 
-Libs.OxaPayLib.getTxInfo({ fields: { trackId: message }, onSuccess: "/onTxInfo " + message })
+Bot.run({ command: "getTxInfo", options: { trackId: message } })

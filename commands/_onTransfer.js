@@ -9,10 +9,9 @@ CMD*/
 if (!options) return
 
 if (options.result == 100)
-  Bot.sendMessage(params + " was withdrawn successfully!")
-else if (options.result == 104)
-  Bot.sendMessage(options.message)
+  Bot.sendMessage(`Send ${params} was submited!\nYour trackId: ${options.trackId}`)
 else {
-  Bot.sendMessage("Your withdrawal request failed. Please try again later")
-  throw options
+  Bot.sendMessage(`Your send request failed. ${options.message}`)
 }
+if (options.status == "complete")
+  Bot.sendMessage("Your transfer was successful")

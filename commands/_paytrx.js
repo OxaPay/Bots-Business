@@ -5,7 +5,7 @@
   auto_retry_time: 
   answer:
   keyboard: 
-  aliases: 💳Payment Gateway (Crypto price)
+  aliases: 💳White-label payment (Crypto price)
 CMD*/
 
-Libs.OxaPayLib.createTransaction({ fields: { amount: 100, currency: 'trx' }, onCreatePayment: "/onCreatePaymentWithTRX" })
+Libs.OxaPayLib.apiCall({ url: "merchants/request/whitelabel", fields: { amount: 100, currency: 'TRX', payCurrency: "TRX", lifeTime: 90, orderId: "ORD-124", onCallback: "/onCallbackPayment" }, onSuccess: "/onCreatePaymentWithTRX" })
