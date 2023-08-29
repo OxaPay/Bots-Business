@@ -89,8 +89,15 @@ function onApiResponseError() {
 function onCallback(e) {
   // Parse the JSON data contained in the callback content
   let data = JSON.parse(content);
+  const apiSecretKey = (data.type === 'payment') ? getMerchantKey() : getPayoutApiKey();
+  const hmacHeader = options.headers.Hmac;
+  const calculatedHmac = CryptoJS.HmacSHA512(content, apiSecretKey).toString(CryptoJS.enc.Hex);
 
-  Bot.run({ command: params, options: data })
+  if (calculatedHmac === hmacHeader) {
+    Bot.run({ command: params, options: data })
+    return 'OK'
+  }
+  return 'Invalid HMAC signature'
 }
 
 // Export functions to be used elsewhere
