@@ -87,10 +87,10 @@ function onApiResponseError() {
 
 // Function called when a transaction status is updated
 function onCallback(e) {
-  const apiSecretKey = (data.type === 'payment') ? getMerchantKey() : getPayoutApiKey();
-  const calculatedHmac = CryptoJS.HmacSHA512(content, apiSecretKey).toString(CryptoJS.enc.Hex);
   // Parse the JSON data contained in the callback content
   let data = JSON.parse(content);
+  const apiSecretKey = (data.type === 'payment') ? getMerchantKey() : getPayoutApiKey();
+  const calculatedHmac = CryptoJS.HmacSHA512(content, apiSecretKey).toString(CryptoJS.enc.Hex);
   data.hmacHeader = options.headers.Hmac;
   data.validCallback = calculatedHmac === data.hmacHeader
 
